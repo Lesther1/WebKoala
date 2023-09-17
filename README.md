@@ -22,7 +22,7 @@ Esta landing page ha sido desarrollada como parte de un proyecto ficticio para e
 ## Para clonar el repositorio
 1. **Abre git bash y coloca el siguiente codigo**
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone <https://github.com/Lesther1/WebKoala.git>
 
 ##Para ver la pagina creada
 Entra al siguiente enlace https://webkoalapoli.netlify.app/
