@@ -26,4 +26,6 @@ Esta landing page ha sido desarrollada como parte de un proyecto ficticio para e
 
 
 ## Enlace
-Entra al siguiente enlace https://webkoalapoli.netlify.app/
+Entra al siguiente enlace para ver la pagina finalizada https://webkoalapoli.netlify.app/
+
+Entra al siguiente enlace para el proceso del diseño en figma https://www.figma.com/file/tIjXVzPLPfPhgVorCCafYY/Servicios-Web-Koala?type=design&node-id=0%3A1&mode=design&t=Rd9wBxChNEGHuwM5-1
