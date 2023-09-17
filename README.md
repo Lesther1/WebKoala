@@ -6,8 +6,8 @@
 
 - [Descripción](#descripción)
 - [Funcionalidades](#funcionalidades)
-- [Clonar](#Para-clonar-el-repositorio)
-- [Ver la pagina creada](#Para-ver-la-pagina-creada)
+- [Clonar](#clonar)
+- [Enlace](#enlace)
 
 ## Descripción
 
@@ -19,10 +19,11 @@ Esta landing page ha sido desarrollada como parte de un proyecto ficticio para e
 - Detalles de los productos, incluyendo imágenes, descripción y precio.
 - Funcionalidad para enviar la lista de productos solicitados por el cliente por correo electrónico.
 
-## Para clonar el repositorio
+## Clonar
 1. **Abre git bash y coloca el siguiente codigo**
    ```bash
    git clone <https://github.com/Lesther1/WebKoala.git>
 
-##Para ver la pagina creada
+
+## Enlace
 Entra al siguiente enlace https://webkoalapoli.netlify.app/
