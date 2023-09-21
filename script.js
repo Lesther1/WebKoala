@@ -63,4 +63,50 @@ function enviarMensajeAPI(email) {
     });
   });
   
-  
+  fetch('productos.json')
+  .then(response => response.json())
+  .then(jsonData => {
+      const container = document.getElementById('CardGridcontainer');
+
+      // Recorrer el JSON y crear la estructura HTML
+      jsonData.forEach(item => {
+          const carContainer = document.createElement('div');
+          carContainer.classList.add('CarContainer');
+
+          const imgElement = document.createElement('img');
+          imgElement.classList.add('ProductImage'); 
+          imgElement.src = item.img;
+      
+          const p1Element = document.createElement('p');
+          p1Element.classList.add('ProductName'); 
+          p1Element.textContent = item.nombre;
+      
+          const p2Element = document.createElement('p');
+          p2Element.classList.add('ProductPrice'); 
+          p2Element.textContent = "Hoy: $"+item.Precio;
+      
+          const aElement = document.createElement('a');
+          aElement.classList.add('BuyLink'); 
+          aElement.textContent = 'Comprar';
+
+          carContainer.appendChild(imgElement);
+          carContainer.appendChild(p1Element);
+          carContainer.appendChild(p2Element);
+          carContainer.appendChild(aElement);
+
+          container.appendChild(carContainer);
+      });
+  })
+  .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+  // Obtén el elemento Navbar-Container
+const navbarContainer = document.querySelector('.Navbar-Container');
+
+// Escucha el evento de scroll
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        navbarContainer.classList.add('scrolled');
+    } else {
+        navbarContainer.classList.remove('scrolled');
+    }
+});

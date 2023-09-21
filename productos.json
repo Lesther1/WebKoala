@@ -1,0 +1,32 @@
+[
+    {
+        "img": "/Img/TorreSonido.jpg",
+        "nombre": "Torre de Sonido 300W Samsung MXT40/ZL  ",
+        "Precio": "549.900"
+    },
+    {
+        "img": "/Img/TecladoLogico.jpeg",
+        "nombre": "Teclado LOGITECH G Alámbrico Gaming G213",
+        "Precio": "359.900"
+    },
+    {
+        "img": "/Img/Reloj.jpeg",
+        "nombre": "Xiaomi Smart Band 7 plus",
+        "Precio": "238.600"
+    },
+    {
+        "img": "/Img/Tablet.jpeg",
+        "nombre": "Tablet 7 Pulgadas Multitech WiFi 16gb 2gb RAM",
+        "Precio": "317.900"
+    },
+    {
+        "img": "/Img/Cargador.jpeg",
+        "nombre": "Cargador Inalámbrico Belkin STAND QI + Speaker",
+        "Precio": "155.900"
+    },
+    {
+        "img": "/Img/Audifonos.jpeg",
+        "nombre": "Audífonos Audio-Technica ATHM40X Monitoreo",
+        "Precio": "449.900"
+    }
+]

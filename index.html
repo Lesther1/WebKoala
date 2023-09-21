@@ -1,90 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <title>Koala</title>
-  </head>
-  <body>
-    <!-- BARRA DE NAVEGACION -->
-    <nav class="Navbar-Container">
-      <a href="index.html"><img id="logoNav" src="./Img/logowebPoli.png" alt="Logo de la empresa" /></a>
-      <div class="Navbar-SubContainer">
-        <ul class="Item-Container">
-            <li><a class="Item-Navbar">INICIO</a></li>
-            <li><a class="Item-Navbar">PRODUCTOS</a></li>
-            <li><a class="Item-Navbar">CONTACTOS</a></li>
-          </ul>
-          <a id="ShopCarLink"><img  id="ShopCar" src="./Img/shopCarIcon.png"></a>
-        </div>
-    </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <title>Koala</title>
+</head>
+
+<body>
+  <!-- BARRA DE NAVEGACION -->
+  <nav class="Navbar-Container">
+    <a href="index.html"><img id="logoNav" src="./Img/logowebPoli.png" alt="Logo de la empresa" /></a>
+    <div class="Navbar-SubContainer">
+      <ul class="Item-Container">
+        <li><a class="Item-Navbar" href="#Bienvenida">INICIO</a></li>
+        <li><a class="Item-Navbar" href="#NuestroProductos">PRODUCTOS</a></li>
+        <li><a class="Item-Navbar">CONTACTOS</a></li>
+      </ul>
+      <a id="ShopCarLink"><img id="ShopCar" src="./Img/shopCarIcon.png"></a>
+    </div>
+  </nav>
+  <div class="mainContainer">
     <!-- Lista de productos comprados -->
     <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <h2>Productos comprados:</h2>
-          <a class="btnComprar"  id="btnComprar">Comprar</a>
-        </div>
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Productos comprados:</h2>
+        <a class="btnComprar" id="btnComprar">Comprar</a>
       </div>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="script.js"></script>
-  </body>
-      <div class="container-introduction">
-        <img src="img/LOGO.png">
-       </div> 
-       <div class="parrafo">
-        <p style="color:green">¿Buscas los últimos dispositivos electrónicos, gadgets inteligentes y soluciones tecnológicas de vanguardia? Estás en el lugar correcto. Nuestra misión es acercarte a la tecnología más avanzada, para que puedas disfrutar de la eficiencia, la diversión y la simplicidad que ofrece en cada aspecto de tu vida.</p>
-       </div>
-       <hr>
-      <header>
-        <h1>NUESTROS PRODUCTOS</h1>
-      </header>
-      <hr>
-        <div class="container-items">
-          <div class="item">
-            <figure>
-              <img
-               src="img/torre de sonido.png.jpg"
-               alt="producto">
+    </div>
 
-            </figure>
-            <div class="info-product">
-              <h2>Torre de sonido 300W samsung MXT40/2L</h2>
-              <p class="price">$549.900</p>
-              <a>comprar</a>
-            </div>
-          </div>
-          <div class="item">
-              <figure>
-                <img
-                    src="img/teclado logictech.png.jpg"
-                    arl="producto">
-                  
-              </figure>
-            </div class="info-product">
-              <h2>Teclado LOGITECH G alambrico gaming G213</h2>
-              <p class="price">$359.900</p> 
-              <a>comprar</a>
-           </div>
-          </div>
-          <div class="item">
-              <figure>
-                <img
-                   src="Img/xiaomi smart band.png.jpeg"
-                   arl="producto">
+    <!--Bienvenida -->
+    <div class="ContainerBienvenida" id="Bienvenida">
+      <img src="/Img/LogoBienvenida.png" id="LogoBienvenida">
+      <p id="MsjBienvenida">¿Buscas los últimos dispositivos electrónicos, gadgets inteligentes y soluciones
+        tecnológicas de vanguardia? Estás en el lugar correcto. Nuestra misión es acercarte a la tecnología más
+        avanzada, para que puedas disfrutar de la eficiencia, la diversión y la simplicidad que ofrece en cada aspecto
+        de tu vida.</p>
+    </div>
+    <!-- Grilla de productos -->
+    <div id="NuestroProductos">
+      <h2 class="subTitle" id="Productos">NUESTROS PRODUCTOS</h2>
+      <div id="CardGridcontainer"></div>
+    </div>
+  
+  </div>
 
-              </figure>
-            </div class="info-product">
-            <h2>xiaomi smart band 7</h2>
-            <p class="price">$238.200</p> 
-            <a>comprar</a>
-         </div>
-        </div>
-         
-       
-      </body>
+  <!-- Pie de pagina -->
+  <footer>
+    <p>Integrantes:</p>
+    <ul>
+      <li>Lesther Rey Crespo</li>
+      <li></li>
+      <li></li>
+    </ul>
+  </footer>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="script.js"></script>
+
 </html>
