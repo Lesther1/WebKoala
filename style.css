@@ -86,3 +86,48 @@ body {
 .btnComprar:hover{
     background-color: #18c6187a;
 }
+
+body{
+  margin: 0 auto;
+  max-width: 1200px;
+  font-family: 'lato';
+  }
+img{
+  /* image 1 torre de sonido */
+    max-width: 100px;
+}
+
+/*introduccion*/
+.container-introduction{
+  display: grid;
+  justify-content: center;
+  }
+
+  
+
+/* header*/
+header{
+  display: flex;
+  justify-content: center;
+  color: #18c6187a;
+}
+    .container-items{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+
+  .item{
+        border-radius: 10px;
+  }
+
+  .item:hover {
+       box-shadow: 0 10px 20px: rgba(0, 0, 0, 0.20)
+      }
+
+  .item-product {
+    padding: 15px 30px;
+  }
+
+  
