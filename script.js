@@ -1,21 +1,31 @@
 function enviarMensajeAPI(email) {
-    var templateParams = {
-      // Ajusta estos parámetros según tu plantilla de correo electrónico
-      to_name: email,
-      from_name: 'Tu nombre',
-      message: 'Sin nada aun',
-      email: email
-    };
-  
-    return emailjs.send('service_oxnpjjg', 'template_1af7p3c', templateParams, 'f9_Ky5GtUYtw15h-Y')
-      .then(function(response) {
-        return 'Mensaje enviado correctamente a ' + email;
-      }, function(error) {
-        return 'Error al enviar el mensaje: ' + JSON.stringify(error);
-      });
-  }
-  
-  
+  const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+
+  // Obtén la información de los productos y formatea el mensaje
+  const productosMensaje = purchaseHistory.map(product => {
+    return `${product.nombre}: $${product.precio}`;
+  }).join('\n');
+
+  var templateParams = {
+    to_name: email,
+    from_name: 'Tu nombre',
+    message: 'Productos comprados:\n' + productosMensaje,
+    email: email
+  };
+
+  // Envía el mensaje
+  return emailjs.send('service_oxnpjjg', 'template_1af7p3c', templateParams, 'f9_Ky5GtUYtw15h-Y')
+    .then(function(response) {
+      localStorage.removeItem('purchaseHistory');
+      closeModal()
+      return 'Mensaje enviado correctamente a ' + email;
+      
+    })
+    .catch(function(error) {
+      return 'Error al enviar el mensaje: ' + JSON.stringify(error);
+    });
+}
+
   function openModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
@@ -89,6 +99,26 @@ function enviarMensajeAPI(email) {
           aElement.classList.add('BuyLink'); 
           aElement.textContent = 'Comprar';
 
+          aElement.addEventListener('click', () => {
+            const productInfo = {
+              nombre: item.nombre,
+              precio: item.Precio
+            };
+            
+            let purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+            
+            purchaseHistory.push(productInfo);
+          
+            localStorage.setItem('purchaseHistory', JSON.stringify(purchaseHistory));
+          
+            Swal.fire({
+              title: `${item.nombre} agregado`,
+              text: `El ${item.nombre} ha sido agregado al carrito correctamente.`,
+              icon: 'success'
+            });
+          });
+          
+
           carContainer.appendChild(imgElement);
           carContainer.appendChild(p1Element);
           carContainer.appendChild(p2Element);
@@ -110,3 +140,28 @@ window.addEventListener('scroll', () => {
         navbarContainer.classList.remove('scrolled');
     }
 });
+
+// Obtén el historial de compras del localStorage
+const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory'));
+
+// Obtén el elemento ul del modal
+const ulElement = document.querySelector('#myModal ul');
+
+// Verifica si hay historial de compras y llena los productos en el modal
+if (purchaseHistory && purchaseHistory.length > 0) {
+  const fragment = document.createDocumentFragment();
+
+  // Recorre el historial de compras y agrega cada producto como un li
+  purchaseHistory.forEach(product => {
+    const liElement = document.createElement('li');
+    liElement.textContent = `Producto: ${product.nombre}, Precio: ${product.precio}`;
+    fragment.appendChild(liElement);
+  });
+
+  // Llena el contenido del modal con los productos
+  ulElement.innerHTML = '';
+  ulElement.appendChild(fragment);
+} else {
+  ulElement.innerHTML = '<li>No hay productos comprados aún.</li>';
+}
+
